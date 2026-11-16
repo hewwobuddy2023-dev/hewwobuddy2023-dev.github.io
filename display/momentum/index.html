@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#070b12" />
+  <meta name="description" content="ALA Applied Technologies IT & Cyber 4DX class momentum scoreboard." />
+  <title>ALA Applied Technologies | 4DX Scoreboard</title>
+  <link rel="icon" type="image/png" href="/pathfinder.png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/refinement.css" />
+  <link rel="stylesheet" href="/presentation.css" />
+  <link rel="stylesheet" href="/broadcast.css" />
+</head>
+<body>
+  <div class="technical-grid" aria-hidden="true"></div>
+  <header id="siteHeader" class="site-header">
+    <a class="brand" href="/" data-link aria-label="ALA Applied Technologies scoreboard home">
+      <img src="/pathfinder.png" alt="ALA Pathfinder mascot" width="72" height="69" />
+      <span><b>ALA APPLIED TECHNOLOGIES</b><strong>IT &amp; CYBER · 4DX</strong></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="/" data-link>Overview</a>
+      <a href="/measures" data-link>Measures</a>
+      <a href="/trends" data-link>Trends</a>
+      <a href="/certifications" data-link>Certifications</a>
+      <a href="/history" data-link>History</a>
+      <a href="/event/">Event broadcast</a>
+      <a href="/event/?segment=4">Academy skills</a>
+    </nav>
+    <div class="header-actions">
+      <button id="reportButton" class="text-button" type="button">Report issue</button>
+      <button id="fullscreenButton" class="icon-button" type="button" aria-label="Toggle fullscreen" title="Toggle fullscreen">⛶</button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <footer id="siteFooter">
+    <span>ALA Applied Technologies · Class progress only</span>
+    <span>Certifications are tracked separately from 4DX points.</span>
+  </footer>
+
+  <dialog id="reportDialog" class="report-dialog">
+    <form id="reportForm" method="dialog">
+      <div class="dialog-head"><div><span class="eyebrow">Staff feedback</span><h2>Report a scoreboard issue</h2></div><button class="icon-button" type="button" data-close-report aria-label="Close report form">×</button></div>
+      <label>Issue type<select name="issue_type" required><option value="incorrect score">Incorrect score</option><option value="stale data">Stale data</option><option value="broken visual">Broken visual</option><option value="incorrect measure">Incorrect measure</option><option value="display problem">Display problem</option><option value="other">Other</option></select></label>
+      <label>Your name or role<input name="reporter" maxlength="80" autocomplete="name" required /></label>
+      <label>What needs attention?<textarea name="details" maxlength="1000" rows="5" required></textarea></label>
+      <input type="hidden" name="route" id="reportRoute" />
+      <p id="reportStatus" class="form-status" aria-live="polite"></p>
+      <div class="dialog-actions"><button class="secondary-button" type="button" data-close-report>Cancel</button><button id="submitReport" class="primary-button" type="submit">Send report</button></div>
+    </form>
+  </dialog>
+
+  <div id="syncToast" class="sync-toast" role="status" aria-live="polite" hidden></div>
+  <script src="/config.js"></script>
+  <script src="/presentation.js"></script>
+  <script src="/playback-core.js"></script>
+<script src="/replay-controller.js"></script>
+<script src="/broadcast.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
